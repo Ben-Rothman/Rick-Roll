@@ -8,9 +8,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pyautogui
 
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome(options=options)
 driver.get("https://www.youtube.com/watch?v=o-YBDTqX_ZU&ab_channel=MusRest")
 driver.maximize_window()
-pyautogui.press("f")
+time.sleep(2)
+pyautogui.moveTo(20, 20, duration = 0.1)
+pyautogui.click()
 pyautogui.press("f")
 time.sleep(100)
